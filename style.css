@@ -1,20 +1,27 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Segoe UI', sans-serif;
     background: linear-gradient(135deg, #74ebd5, #9face6);
     margin: 0;
-    padding: 20px;
+    padding: 10px;
 }
 
 h1 {
     text-align: center;
     color: white;
+    font-size: 22px;
 }
 
+/* Container */
 .container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: auto;
 }
 
+/* Form */
 .form {
     background: white;
     padding: 15px;
@@ -24,12 +31,15 @@ h1 {
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
+/* Inputs */
 input, select, button {
-    padding: 10px;
-    border-radius: 8px;
+    padding: 12px;
+    border-radius: 10px;
     border: 1px solid #ccc;
+    font-size: 14px;
 }
 
+/* Button */
 button {
     background: #4CAF50;
     color: white;
@@ -41,49 +51,106 @@ button:hover {
     background: #45a049;
 }
 
+/* Grid layout */
 .grid {
     margin-top: 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 15px;
 }
 
+/* Card */
 .card {
     background: white;
     border-radius: 12px;
-    padding: 10px;
+    padding: 12px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 .card h3 {
     margin: 5px 0 10px;
     color: #333;
+    font-size: 16px;
 }
 
+/* Medicine item */
 .medicine {
     background: #f0f4ff;
-    padding: 8px;
-    margin: 5px 0;
+    padding: 10px;
+    margin: 6px 0;
     border-radius: 8px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 14px;
 }
 
+/* Low stock */
 .low {
     background: #ffe0e0;
 }
 
+/* Buttons */
 .controls button {
     margin-left: 5px;
-    padding: 5px 8px;
+    padding: 6px 8px;
     font-size: 12px;
+    border-radius: 6px;
 }
 
 .delete {
     background: red;
+    color: white;
 }
 
 .reduce {
     background: orange;
+    color: white;
+}
+
+/* 📱 MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 18px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form {
+        padding: 12px;
+    }
+
+    input, select, button {
+        font-size: 16px;
+        padding: 14px;
+    }
+
+    .medicine {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .controls {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+/* 📱 SMALL PHONES */
+@media (max-width: 480px) {
+    body {
+        padding: 8px;
+    }
+
+    h1 {
+        font-size: 16px;
+    }
+
+    .card h3 {
+        font-size: 14px;
+    }
 }
